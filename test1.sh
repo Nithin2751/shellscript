@@ -1,8 +1,36 @@
 #!/bin/bash
 
-rm file1
-echo "Memory usage " >> file1
-free -h >> file1
-echo "Disk usage" >> file1
-df -h >> file1
+# Create reports directory if it doesn't exist
+mkdir -p reports
 
+# Define log file name with timestamp
+LOG_FILE="reports/monitor_output_$(date +'%Y%m%d_%H%M%S').log"
+
+# Write system info to the log file
+{
+    echo "====== System Resource Usage Report ======"
+    echo "Date: $(date)"
+    echo ""
+
+    echo ">> CPU Usage:"
+    top -b -n1 | grep "Cpu(s)"
+
+    echo ""
+    echo ">> Memory Usage:"
+    free -h
+
+    echo ""
+    echo ">> Disk Usage:"
+    df -h
+
+    echo ""
+    echo ">> Top 5 Memory Consuming Processes:"
+    ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 6
+
+    echo ""
+    echo "=========================================="
+
+} > "$LOG_FILE"
+
+# Optional: Print where the file is saved
+echo "Report saved to $LOG_FILE"
