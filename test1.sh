@@ -17,7 +17,7 @@
     df -h
 
     echo ""
-    echo ">> Top 5 Memory Consuming Processes:"
+    echo "Top 5 Memory Consuming Processes:"
     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 6
 
    
