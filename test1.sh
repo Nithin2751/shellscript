@@ -6,7 +6,7 @@
     echo ""
 
     echo "CPU USAGE:"
-    top  | grep "Cpu(s)"
+    top -b -n1| grep "Cpu(s)"
 
     echo ""
     echo "MEMORY USAGE:"
