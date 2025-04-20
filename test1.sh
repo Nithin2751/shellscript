@@ -1,14 +1,9 @@
 #!/bin/bash
 
-# Create reports directory if it doesn't exist
-mkdir -p reports
-
-# Define log file name with timestamp
 LOG_FILE="log1.txt"
 
-# Write system info to the log file
 {
-    echo "====== System Resource Usage Report ======"
+    
     echo "Date: $(date)"
     echo ""
 
