@@ -1,7 +1,5 @@
 #!/bin/bash
 
-LOG_FILE="log1.txt"
-
 {
     
     echo "Date: $(date)"
@@ -25,6 +23,6 @@ LOG_FILE="log1.txt"
     echo ""
     echo "=========================================="
 
-} > "$LOG_FILE"
+} > "log1.txt"
 
 
