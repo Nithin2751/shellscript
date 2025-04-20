@@ -2,26 +2,25 @@
 
 {
     
-    echo "Date: $(date)"
+    echo "DATE: $(date)"
     echo ""
 
-    echo ">> CPU Usage:"
+    echo "CPU USAGE:"
     top -b -n1 | grep "Cpu(s)"
 
     echo ""
-    echo ">> Memory Usage:"
+    echo "MEMORY USAGE:"
     free -h
 
     echo ""
-    echo ">> Disk Usage:"
+    echo "DISK USAGE:"
     df -h
 
     echo ""
     echo ">> Top 5 Memory Consuming Processes:"
     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 6
 
-    echo ""
-    echo "=========================================="
+   
 
 } > "log1.txt"
 
