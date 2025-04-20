@@ -27,5 +27,4 @@ LOG_FILE="log1.txt"
 
 } > "$LOG_FILE"
 
-# Optional: Print where the file is saved
-echo "Report saved to $LOG_FILE"
+
