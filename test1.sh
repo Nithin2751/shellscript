@@ -4,7 +4,7 @@
 mkdir -p reports
 
 # Define log file name with timestamp
-LOG_FILE="reports/monitor_output_$(date +'%Y%m%d_%H%M%S').log"
+LOG_FILE="log1.log"
 
 # Write system info to the log file
 {
